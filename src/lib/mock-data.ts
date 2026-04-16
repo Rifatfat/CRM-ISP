@@ -198,11 +198,19 @@ export function getMockDatabase() {
     return cloneSeed();
   }
 
-  const existing = window.localStorage.getItem(STORAGE_KEY);
+  //const existing = window.localStorage.getItem(STORAGE_KEY);
+  let existing: string | null = null;
+
+  if (typeof window !== "undefined") {
+    existing = window.localStorage.getItem(STORAGE_KEY);
+  }
 
   if (!existing) {
     const seeded = cloneSeed();
+    //window.localStorage.setItem(STORAGE_KEY, JSON.stringify(seeded));
+    if (typeof window !== "undefined") {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(seeded));
+    }
     return seeded;
   }
 
@@ -214,7 +222,10 @@ export function saveMockDatabase(database: MockDatabase) {
     return;
   }
 
+  //window.localStorage.setItem(STORAGE_KEY, JSON.stringify(database));
+  if (typeof window !== "undefined") {
   window.localStorage.setItem(STORAGE_KEY, JSON.stringify(database));
+  }
 }
 
 export function ensureMockDatabase() {
