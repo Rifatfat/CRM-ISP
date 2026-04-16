@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --canvas: #f3f5f9;
+  --card: #ffffff;
+  --muted: #eef2f6;
+  --muted-foreground: #64748b;
+  --border: #dbe4ee;
+  --primary: #0f172a;
+  --primary-foreground: #f8fafc;
+  --secondary: #e2e8f0;
+  --secondary-foreground: #0f172a;
+  --ring: #3b82f6;
+  --destructive: #e11d48;
+}
+
+@theme inline {
+  --color-background: var(--canvas);
+  --color-foreground: var(--foreground);
+  --font-sans: "Aptos", "Segoe UI Variable Text", "Segoe UI", sans-serif;
+  --font-mono: "Bahnschrift", "Segoe UI Variable Display", "Trebuchet MS", sans-serif;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(191, 219, 254, 0.52), transparent 34%),
+    linear-gradient(180deg, #f8fafc 0%, #f3f4f6 48%, #f5efe6 100%);
+  color: var(--foreground);
+  font-family: "Aptos", "Segoe UI Variable Text", "Segoe UI", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Bahnschrift", "Segoe UI Variable Display", "Trebuchet MS", sans-serif;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  transition:
+    transform 180ms ease,
+    opacity 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+::selection {
+  background: rgba(59, 130, 246, 0.18);
+}
+
+[data-slot="card-grid"] > * {
+  animation: rise-in 320ms ease both;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
