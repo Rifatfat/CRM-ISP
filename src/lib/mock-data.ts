@@ -198,6 +198,7 @@ export function getMockDatabase() {
     return cloneSeed();
   }
 
+<<<<<<< HEAD
   //const existing = window.localStorage.getItem(STORAGE_KEY);
   let existing: string | null = null;
 
@@ -211,6 +212,13 @@ export function getMockDatabase() {
     if (typeof window !== "undefined") {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(seeded));
     }
+=======
+  const existing = window.localStorage.getItem(STORAGE_KEY);
+
+  if (!existing) {
+    const seeded = cloneSeed();
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(seeded));
+>>>>>>> 06caa69 (init: clean CRM ISP frontend)
     return seeded;
   }
 
@@ -222,10 +230,14 @@ export function saveMockDatabase(database: MockDatabase) {
     return;
   }
 
+<<<<<<< HEAD
   //window.localStorage.setItem(STORAGE_KEY, JSON.stringify(database));
   if (typeof window !== "undefined") {
   window.localStorage.setItem(STORAGE_KEY, JSON.stringify(database));
   }
+=======
+  window.localStorage.setItem(STORAGE_KEY, JSON.stringify(database));
+>>>>>>> 06caa69 (init: clean CRM ISP frontend)
 }
 
 export function ensureMockDatabase() {

@@ -1,8 +1,0 @@
-{
-  "/(app)/customers/page": "app/(app)/customers/page.js",
-  "/(app)/dashboard/page": "app/(app)/dashboard/page.js",
-  "/(app)/notifications/page": "app/(app)/notifications/page.js",
-  "/(app)/subscriptions/page": "app/(app)/subscriptions/page.js",
-  "/login/page": "app/login/page.js",
-  "/page": "app/page.js"
-}
